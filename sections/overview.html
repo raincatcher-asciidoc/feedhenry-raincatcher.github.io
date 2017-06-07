@@ -1,0 +1,184 @@
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides a overview of {ProductName} documentation.
+You can read this document in a linear fashion, or you can skip sections if something doesn’t interest you.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-the-documentation">About the documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The  {ProductName} documentation is available as html files generated from ascidocs documents.
+You can view source code of this page on github: <a href="http://github.com/feedhenry-raincatcher/feedhenry-raincatcher.github.io" class="bare">http://github.com/feedhenry-raincatcher/feedhenry-raincatcher.github.io</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started">Getting started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To quickly start write mobile enabled Workflow Managment applications please follow our guides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="./guides/wfm.html">WFM Guide</a>
+Getting Started for Workflow Management Solutions.</p>
+</li>
+<li>
+<p><a href="./guides/framework.html">Framework Guide</a>
+Getting Started with {ProductName} core components.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductName}  consist of set of node.js modules written in TypeScript language that are packaged and distributed as
+{ProductName} provides a set of reusable components that can simplify mobile, web and cloud application development.
+Solution allows developers to write secure, offline ready websites and mobile applications.
+{ProductName} provides Workforce Managment oriented framework for Workforce Management applications.</p>
+</div>
+<div class="paragraph">
+<p>Solution consist of two fully independent frameworks:
+ * Workflow Managment Framework
+ * Rapid Application Development Framework</p>
+</div>
+<div class="paragraph">
+<p>As extension to frameworks above {ProductName} provides set of example module implementations as part of demo applications.</p>
+</div>
+<div class="sect2">
+<h3 id="workflow-managment-framework">Workflow Managment Framework</h3>
+<div class="paragraph">
+<p>{ProductName} Workflow Managment Framework build BPMN compliant workflow management solution.
+WFM framework allows to build advanced Business Process Management solutions.
+Framework helps to write solutions that connects a business back-office with its fleet of mobilized employees.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Task: defines single unit of work for business process</p>
+</li>
+<li>
+<p>Flow: contain ordered set of tasks and handlers for executing tasks in proper order</p>
+</li>
+<li>
+<p>Process: instance of flow containing current progress and business objects.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Users can write custom Tasks (Workflow Steps) that will implement any business logic and link implementation with any UI solution.
+Framework abstract from any web or mobile application libraries, allowing developers to focus on impmentation of the process.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rapid-application-development-framework">Rapid Application Development Framework</h3>
+<div class="paragraph">
+<p>{ProductName} Rapid Application Development Framework allows to build production-grade Node.js and Cordova based applications.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/technologies.png" alt="Technologies"></span></p>
+</div>
+<div class="paragraph">
+<p>Main targets for framework:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rapid, production ready application development framework.</p>
+</li>
+<li>
+<p>Covers Mobile, web and server side application development</p>
+</li>
+<li>
+<p>Written in TypeScript (with support JavaScript development)</p>
+</li>
+<li>
+<p>Secure out of the box thanks to multiple security providers (Keycloak, Passport.js)</p>
+</li>
+<li>
+<p>Full support for offline enabled applications thanks to FeedHenry Sync</p>
+</li>
+<li>
+<p>Extensibility provided by set of TypeScript based interfaces</p>
+</li>
+<li>
+<p>Provide A sleek, modern, mobile enabled front-end reference applications</p>
+</li>
+<li>
+<p>Provides abstraction layer for common application elements:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Data access</p>
+</li>
+<li>
+<p>Security</p>
+</li>
+<li>
+<p>Logging</p>
+</li>
+<li>
+<p>Restfull API creation</p>
+</li>
+<li>
+<p>Unit testing</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Framework abstract from any application logic and technologies allowing developers to extend it for their needs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="demo-application">Demo application</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Set of example implementations for Workflow Managment Solutions (Workorder, WorkorderResult)</p>
+</li>
+<li>
+<p>Website, Mobile and server demo applications serving as reference implementation for the framework.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="raincatcher-module-relationships">RainCatcher module relationships</h3>
+<div class="paragraph">
+<p><span class="image"><img src="images/architecture.png" alt="Top Level Architecture"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-structure">Module structure</h3>
+<div class="paragraph">
+<p>RainCatcher modules are written in <a href="http://typescriptlang.org">TypeScript</a>.</p>
+</div>
+<div class="paragraph">
+<p>The main files are modules that by default export a class containing the main implementation for the module&#8217;s intent,with a named export containing a public interface that should be depended upon, and reimplemented.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-typescript" data-lang="typescript">import Implementation, { PublicInterface } from '@raincatcher/module';</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="default-exports">Default exports</h3>
+<div class="paragraph">
+<p>Each module exports by default an implementation and set of interfaces by name.
+Default implementation will usually implement most common use case for module.
+Along with the default export, all modules include a public interface definition that are depended upon by other RainCatcher modules instead of depending on the implementation itself.</p>
+</div>
+</div>
+</div>
+</div>
