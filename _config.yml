@@ -7,9 +7,9 @@ exclude:
   - Gemfile.lock
 asciidoc: {}
 asciidoctor:
-  - base_dir: :docdir
-  - safe: unsafe
-  - atrributes: 
+  base_dir: :docdir
+  safe: unsafe
+  atrributes: 
     - idseparator: _
     - source-highlighter: coderay
     - icons: font
