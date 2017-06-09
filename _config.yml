@@ -5,6 +5,9 @@ exclude:
   - Rakefile
   - Gemfile
   - Gemfile.lock
+serve:
+  url: "https://feedhenry-raincatcher.github.io"
+  baseurl: ""
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
