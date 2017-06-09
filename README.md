@@ -8,7 +8,6 @@ See best practices page:
 http://asciidoctor.org/docs/asciidoc-recommended-practices
 
 
-## Building
+## Repository description
 
-    gem install asciidoctor 
-    asciidoctor index.adoc
+[_config.yml](_config.yml) config file for Jekyll. Full configuration option list is available [here](https://jekyllrb.com/docs/configuration/)
