@@ -5,8 +5,6 @@ exclude:
   - Rakefile
   - Gemfile
   - Gemfile.lock
-serve:
-  baseurl: "demo"
 asciidoc: {}
 asciidoctor:
   base_dir: :docdir
