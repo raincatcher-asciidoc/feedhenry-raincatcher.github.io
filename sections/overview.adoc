@@ -1,6 +1,6 @@
 = Overview 
 
-This section provides a overview of {ProductName} documentation. 
+This section provides a overview of {ProductName} documentation. Or not
 You can read this document in a linear fashion, or you can skip sections if something doesn’t interest you.
 
 ==  About the documentation
