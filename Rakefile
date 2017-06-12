@@ -5,4 +5,5 @@ require 'rake-jekyll'
 # See http://github.com/jirutka/rake-jekyll for more options.
 Rake::Jekyll::GitDeployTask.new(:deploy) do |t|
         t.committer = 'spriadka'
+        t.remote_url = 'feedhenry-raincatcher.github.io'
     end
