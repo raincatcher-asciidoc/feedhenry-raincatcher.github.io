@@ -1,28 +1,11 @@
-sudo: required
-
-services:
-  - docker                  
-
-before_install:            
-  - mkdir -p output
-  - docker pull asciidoctor/docker-asciidoctor
-
-script:
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/output *.adoc      
-  - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/output *.adoc    
-
-after_error: 
-  - docker logs asciidoc-to-html
-  - docker logs asciidoc-to-pdf
-
-after_failure:
-  - docker logs asciidoc-to-html
-  - docker logs asciidoc-to-pdf
-
-after_success:      
-  - cd output ; mv README.html index.html ; cp -R ../images images
-  - git init
-  - git config user.name "${GH_USER_NAME}"
-  - git config user.email "{GH_USER_EMAIL}"
-  - git add . ; git commit -m "Deploy to GitHub Pages"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+language: ruby
+rvm:
+- 2.2.0
+sudo: false
+script: bundle exec rake deploy
+before_install:
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "user@example.com"
+env:
+  global:
+    secure:rrfORhXJmnsuzOJH+bNGCOOjCS+V3Wx8XWf0KMJKpbhO9Y2VSuUxxdm12IcP3J4GsYonnixkXGvCzchvRpjPhbSWSGhwJHNosE7F/YZDGUK+zniGlX0Kv+k4sMW6/DrzHmX31laQA8SK6W/o2An/yAQ8bDklVGdUfIjjm6OymkxBt0SJ+jry0dIZ71No5r96U7aWmI4gfQxdfqJnlPKylbfrkF/vh0tkyaJzSyfCXiTj/q4F84A2sBAqltIzDEMixGXiOVZxFCw/ChwfbfuVQ3WHWMHDKMqIgRrYiRiqt+ufj0uEwL5CceF/eg66wx7d3az4P3l978d0YygkWcpxkLsIaClKe3oZxhXn9C3MMYIrtvL0GjCOKbNB2Edc8wzliQPd14iRxUkgfexmhnmECbAgB00X8SEhan0eH87IANAEi/vw+KYSYAzaWbgB25W+JZTudSvWEzSDjjrnfBo1fDhe3DXWumab09G/PlxTv3sVZgWz/l0le/wXRzRbWJa7ZQd4PzrVKNvDWmhzY19hfo7Y9JQKVdzKRgC5PNOtGs+txTZw4QY63LGaxkHKf/haWeaF0acPSA5U7rt87+uL1bTP3VLz6cwm0oAogW7TJn7D/KEat0OXiJ/XtLbuSDptqqL65ZUFWO14mcPbH8tGicnZ8DLISEbywNc/jJXPEuY=
